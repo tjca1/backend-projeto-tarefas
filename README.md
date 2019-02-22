@@ -1,2 +1,16 @@
-"# backend-projeto-tarefas" 
-"# BackNode ! bata !" 
+
+/////pacotes//////////////////////////////////////////////////////////////////////////////////////////////////////
+npm i --save -E body-parser@1.15.2 express@4.14.0 mongoose@4.7.0 node-restful@0.2.5 pm2@2.1.5 
+npm i --save --save-dev -E nodemon@1.11.0
+//////mongo no docker////////////////////////////////////////////////////////////////////////////////////////////
+docker pull mongo:4.1.8
+docker container run --name mongo_para_node -d -p 27017:27017 -p 28017:28017 -e MONGO_INITDB_ROOT_USERNAME=mongo  -e MONGO_INITDB_ROOT_PASSWORD=mongo mongo:4.1.8
+docker container start -ai mongo_para_node
+docker container stop mongo_para_node
+//////subir para prod///////////////////////////////////////////////////////////////////////////////////////////////
+npm run production
+///ver status////
+call node_modules\.bin\pm2 status
+///monitorar a app////
+call node_modules\.bin\pm2 monit
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
