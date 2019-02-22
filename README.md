@@ -7,6 +7,8 @@ docker pull mongo:4.1.8
 docker container run --name mongo_para_node -d -p 27017:27017 -p 28017:28017 -e MONGO_INITDB_ROOT_USERNAME=mongo  -e MONGO_INITDB_ROOT_PASSWORD=mongo mongo:4.1.8
 docker container start -ai mongo_para_node
 docker container stop mongo_para_node
+//////acessar o container terminal////////////
+docker exec -it mongo_para_node bash
 //////subir para prod///////////////////////////////////////////////////////////////////////////////////////////////
 npm run production
 ///ver status////
